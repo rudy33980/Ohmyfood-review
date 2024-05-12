@@ -13,13 +13,15 @@
   }
 }
 header {
-  padding-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 header a {
   color: #fff;
   text-decoration: none;
   font-size: 1.5rem;
 }
+
 /* Colors */
 /* Gradient */
 /* Degree Gradient */
@@ -203,12 +205,16 @@ body {
   justify-content: center;
 }
 .search-destination span i {
-  padding-right: 10px;
+  margin-right: 5px;
+  font-size: 20px;
 }
 .search-destination input {
   background-color: #d5d5d5;
   border: none;
   font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  width: 200px;
 }
 
 .discovery {
@@ -216,33 +222,30 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-  text-align: center;
 }
 .discovery h1 {
   font-size: 1.5rem;
 }
 .discovery p {
   width: 360px;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 .discovery button {
   margin-top: 30px;
   margin-bottom: 40px;
-  margin-left: 18%;
-  width: 60%;
+  margin-left: 15%;
+  width: 70%;
   border-radius: 40px;
   color: #ffffff;
   background: linear-gradient(to right, #9356dc, #FF79DA);
   height: 60px;
   border: none;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .functioning {
   width: 85%;
   margin: 0 auto;
-  gap: 10px;
-  text-align: center;
 }
 .functioning h2 {
   font-size: 30px;
@@ -258,6 +261,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+.functioning .choose:hover {
+  background: #FF79DA;
+}
 .functioning .choose .number {
   display: flex;
   justify-content: center;
@@ -271,8 +277,9 @@ body {
   position: absolute;
   left: -15px;
 }
-.functioning :hover {
-  background: #FF79DA;
+.functioning .choose .titre-menu {
+  position: absolute;
+  left: 75px;
 }
 .functioning i {
   position: absolute;
@@ -288,6 +295,9 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+}
+.functioning .compose:hover {
+  background: #FF79DA;
 }
 .functioning .compose .number {
   display: flex;
@@ -312,6 +322,13 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+}
+.functioning .taste .titre-menu {
+  position: absolute;
+  left: 75px;
+}
+.functioning .taste:hover {
+  background: #FF79DA;
 }
 .functioning .taste .number {
   display: flex;
@@ -402,17 +419,6 @@ body {
   background-color: #99E2D0;
   color: #99E2D0;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-.page-menu .order-button {
-  background-color: #99E2D0;
-  color: #99E2D0;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.page-menu .order-button:hover {
-  background-color: #cc0000;
 }
 
 /*# sourceMappingURL=style.css.map */

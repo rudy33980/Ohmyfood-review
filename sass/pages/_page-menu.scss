@@ -14,49 +14,52 @@
 
   span {
     i {
-      padding-right: 10px;
+      // padding-right: 10px;
+      margin-right: 5px;
+      font-size: 20px;
     }
   }
   input {
     background-color: $shadow;
     border: none;
     font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    width: 200px;
   }
+  
 }
 
 .discovery {
   background-color: $greyClair;
   @include flexCenter;
- text-align: center;
 
   h1 {
     font-size: 1.5rem;
   }
   p {
     width: 360px;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   button {
     margin-top: 30px;
     margin-bottom: 40px;
-    margin-left:18%;
-    width: 60%;
+    margin-left: 15%;
+    width: 70%;
     border-radius: 40px;
-    // margin: 0 auto;
     color: $white;
     @include gradient-background;
     height: 60px;
     border: none;
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 
 .functioning {
   width: 85%;
   margin: 0 auto;
-  gap: 10px;
-  text-align: center;
-  h2 {
+
+  & h2 {
     font-size: 30px;
   }
 
@@ -64,6 +67,10 @@
     position: relative;
     @include fonctioning;
     @include flexAlign;
+
+    &:hover {
+      background: $secondary-color;
+    }
     .number {
       @include flexAlign;
       color: $white;
@@ -75,10 +82,12 @@
       position: absolute;
       left: -15px;
     }
+    .titre-menu{
+      position: absolute;
+      left: 75px;
+    }
   }
-  :hover {
-    background: $secondary-color;
-  }
+
   i {
     position: absolute;
     left: 40px;
@@ -88,6 +97,9 @@
     @include fonctioning;
     @include flexAlign;
     position: relative;
+    &:hover {
+      background: $secondary-color;
+    }
 
     .number {
       @include flexAlign;
@@ -101,11 +113,18 @@
       left: -15px;
     }
   }
+
   .taste {
     @include fonctioning;
     @include flexAlign;
     position: relative;
-
+    .titre-menu{
+      position: absolute;
+      left: 75px;
+    }
+    &:hover {
+      background: $secondary-color;
+    }
     .number {
       @include flexAlign;
       color: $white;
@@ -118,6 +137,7 @@
       left: -15px;
     }
   }
+
   p {
     font-weight: bold;
     margin: 0;
@@ -143,6 +163,7 @@
     position: relative;
     margin-bottom: 5%;
   }
+
   img {
     border-radius: 20px 20px 0 0px;
     width: 100%;
@@ -151,13 +172,16 @@
     background-image: cover;
     height: 200px;
   }
+
   h2 {
     padding-top: 30px;
   }
+
   p {
     color: black;
     font-weight: bold;
   }
+
   span {
     color: black;
   }
@@ -167,6 +191,7 @@
     line-height: 0.5;
     padding-bottom: 20px;
   }
+
   .icon-card-heart,
   .icon-heart-animation {
     position: absolute;
@@ -206,21 +231,6 @@
         color: $tertiary-color;
         transition: background-color 0.3s ease, color 0.3s ease;
       }
-    }
-  }
-
-  // Styles pour le bouton de commande
-  .order-button {
-    background-color: $tertiary-color;
-    color: $tertiary-color;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-
-    // Animation au survol du bouton
-    &:hover {
-      background-color: darken(red, 10%);
     }
   }
 }
