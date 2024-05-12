@@ -1,0 +1,226 @@
+// _page-menu.scss
+
+// Importations nécessaires
+@import "../utils/variables";
+@import "../utils/mixins";
+@import "../utils/animations";
+
+.search-destination {
+  background-color: $shadow;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    i {
+      padding-right: 10px;
+    }
+  }
+  input {
+    background-color: $shadow;
+    border: none;
+    font-weight: bold;
+  }
+}
+
+.discovery {
+  background-color: $greyClair;
+  @include flexCenter;
+ text-align: center;
+
+  h1 {
+    font-size: 1.5rem;
+  }
+  p {
+    width: 360px;
+    font-size: 1rem;
+  }
+  button {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-left:18%;
+    width: 60%;
+    border-radius: 40px;
+    // margin: 0 auto;
+    color: $white;
+    @include gradient-background;
+    height: 60px;
+    border: none;
+    font-size: 15px;
+  }
+}
+
+.functioning {
+  width: 85%;
+  margin: 0 auto;
+  gap: 10px;
+  text-align: center;
+  h2 {
+    font-size: 30px;
+  }
+
+  .choose {
+    position: relative;
+    @include fonctioning;
+    @include flexAlign;
+    .number {
+      @include flexAlign;
+      color: $white;
+      font-size: 15px;
+      border-radius: 50px;
+      width: 25px;
+      height: 25px;
+      background-color: $primary-color;
+      position: absolute;
+      left: -15px;
+    }
+  }
+  :hover {
+    background: $secondary-color;
+  }
+  i {
+    position: absolute;
+    left: 40px;
+  }
+
+  .compose {
+    @include fonctioning;
+    @include flexAlign;
+    position: relative;
+
+    .number {
+      @include flexAlign;
+      color: $white;
+      font-size: 15px;
+      border-radius: 50px;
+      width: 25px;
+      height: 25px;
+      background-color: $primary-color;
+      position: absolute;
+      left: -15px;
+    }
+  }
+  .taste {
+    @include fonctioning;
+    @include flexAlign;
+    position: relative;
+
+    .number {
+      @include flexAlign;
+      color: $white;
+      font-size: 15px;
+      border-radius: 50px;
+      width: 25px;
+      height: 25px;
+      background-color: $primary-color;
+      position: absolute;
+      left: -15px;
+    }
+  }
+  p {
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
+.section-menu {
+  background-color: $greyClair;
+  padding-bottom: 50px;
+
+  h2 {
+    margin-left: 25px;
+    font-size: 30px;
+  }
+
+  a {
+    background-color: $white;
+    width: 90%;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 5%;
+  }
+  img {
+    border-radius: 20px 20px 0 0px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    background-image: cover;
+    height: 200px;
+  }
+  h2 {
+    padding-top: 30px;
+  }
+  p {
+    color: black;
+    font-weight: bold;
+  }
+  span {
+    color: black;
+  }
+
+  .text-card {
+    margin-left: 20px;
+    line-height: 0.5;
+    padding-bottom: 20px;
+  }
+  .icon-card-heart,
+  .icon-heart-animation {
+    position: absolute;
+    right: 30px;
+    bottom: -10px;
+    font-size: 30px;
+  }
+}
+
+// Styles spécifiques à la page de menu
+.page-menu {
+  // Styles pour le conteneur principal de la page de menu
+  background-color: $tertiary-color;
+  color: $tertiary-color;
+  font-family: $tertiary-color;
+
+  // Styles pour la section d'en-tête
+  .menu-header {
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  // Styles pour la liste des plats
+  .menu-list {
+    padding: 20px;
+
+    // Styles pour chaque élément de la liste
+    .menu-item {
+      margin-bottom: 10px;
+      border: 1px solid $tertiary-color;
+      padding: 10px;
+
+      // Animation lors du survol de l'élément
+      &:hover {
+        background-color: $tertiary-color;
+        color: $tertiary-color;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    }
+  }
+
+  // Styles pour le bouton de commande
+  .order-button {
+    background-color: $tertiary-color;
+    color: $tertiary-color;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    // Animation au survol du bouton
+    &:hover {
+      background-color: darken(red, 10%);
+    }
+  }
+}

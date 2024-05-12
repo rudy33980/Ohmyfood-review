@@ -1,0 +1,82 @@
+// mixins.scss
+
+// Mixin pour centrer un élément horizontalement et verticalement
+// @mixin center {
+//   position: absolute;
+//   top: 0px;
+//   left: 90%;
+//   font-size: 30px;
+//   // transform: translate(60%);
+// }
+
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+@mixin flexAlign {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+@mixin flexAlignRight {
+  display: flex;
+  justify-content:end;
+  align-items: center;
+}
+@mixin flexAlignLeft {
+  display: flex;
+  justify-content:start;
+  align-items: center;
+}
+
+@mixin gridCenter {
+  display: grid;
+  grid-template-rows: 3fr;
+  justify-content: center;
+
+}
+
+@mixin fonctioning {
+  background-color: $greyClair;
+  border-radius: 20px 20px 20px 20px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  height: 80px;
+}
+
+// Mixin pour ajouter un dégradé de couleur en arrière-plan
+@mixin gradient-background{
+  background: linear-gradient(to right, $primary-color, $secondary-color);
+}
+
+// Mixin pour créer une animation de rotation
+@mixin rotate($degrees) {
+  transform: rotate($degrees);
+}
+
+// Mixin pour créer une animation de pulsation
+@mixin pulse($duration: 1s) {
+  animation: pulseAnimation $duration infinite alternate;
+}
+
+@keyframes pulseAnimation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+// Mixin pour créer une animation de zoom
+@mixin zoom($scale: 1.1) {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale($scale);
+  }
+
+  
+}
