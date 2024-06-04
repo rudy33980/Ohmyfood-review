@@ -1,4 +1,3 @@
-
 // Importations nécessaires
 @import "../utils/variables";
 @import "../utils/mixins";
@@ -25,7 +24,6 @@
     text-align: center;
     width: 200px;
   }
-  
 }
 
 .discovery {
@@ -42,6 +40,7 @@
   button {
     margin-top: 30px;
     margin-bottom: 40px;
+    margin-left: 15%;
     width: 70%;
     border-radius: 40px;
     color: $white;
@@ -79,7 +78,7 @@
       position: absolute;
       left: -15px;
     }
-    .titre-menu{
+    .titre-menu {
       position: absolute;
       left: 75px;
     }
@@ -115,7 +114,7 @@
     @include fonctioning;
     @include flexAlign;
     position: relative;
-    .titre-menu{
+    .titre-menu {
       position: absolute;
       left: 75px;
     }
@@ -150,15 +149,26 @@
     font-size: 30px;
   }
 
+  .card,
   a {
     background-color: $white;
     width: 90%;
-    display: block;
+    // display: block;
     margin: auto;
     border-radius: 20px;
     text-decoration: none;
-    position: relative;
     margin-bottom: 5%;
+    position: relative;
+  }
+
+  .other-card {
+    border-radius: 20px;
+    text-decoration: none;
+    margin: auto;
+    margin-bottom: 5%;
+    background-color: $white;
+    width: 90%;
+    display: block;
   }
 
   img {
@@ -166,17 +176,32 @@
     width: 100%;
     display: block;
     margin: auto;
-    background-image: cover;
+    object-fit: cover;
     height: 200px;
+    position: relative;
+  }
+
+  .new-menu {
+    color: green;
+    background-color: $tertiary-color;
+    font-size: 1.1em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 2%;
   }
 
   h2 {
     padding-top: 30px;
   }
 
-  p {
+  p,
+  h3 {
     color: black;
     font-weight: bold;
+    font-size: 16px;
   }
 
   span {
@@ -187,42 +212,49 @@
     margin-left: 20px;
     line-height: 0.5;
     padding-bottom: 20px;
+    position: relative;
   }
-
-  .icon-card-heart,
-  .icon-heart-animation {
+  & i {
+    color: black;
+    width: 20px;
+    height: 20px;
+    font-size: 2rem;
     position: absolute;
-    right: 30px;
-    bottom: -10px;
-    font-size: 30px;
+    right: 1rem;
+    top: 5%;
+    transform: translate(-50%);
   }
+  .fas::before {
+    color: transparent;
+    background-image: linear-gradient(red, blue);
+    background-clip: text;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+  }
+  & .fas:hover::before {
+  opacity: 1;
+    }
 }
 
-// Styles spécifiques à la page de menu
 .page-menu {
-  // Styles pour le conteneur principal de la page de menu
   background-color: $tertiary-color;
   color: $tertiary-color;
   font-family: $tertiary-color;
 
-  // Styles pour la section d'en-tête
   .menu-header {
     padding: 20px;
     text-align: center;
     font-size: 24px;
   }
 
-  // Styles pour la liste des plats
   .menu-list {
     padding: 20px;
 
-    // Styles pour chaque élément de la liste
     .menu-item {
       margin-bottom: 10px;
       border: 1px solid $tertiary-color;
       padding: 10px;
 
-      // Animation lors du survol de l'élément
       &:hover {
         background-color: $tertiary-color;
         color: $tertiary-color;
@@ -231,7 +263,3 @@
     }
   }
 }
-
-
-
-
