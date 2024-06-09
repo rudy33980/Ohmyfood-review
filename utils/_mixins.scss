@@ -1,14 +1,3 @@
-// mixins.scss
-
-// Mixin pour centrer un élément horizontalement et verticalement
-// @mixin center {
-//   position: absolute;
-//   top: 0px;
-//   left: 90%;
-//   font-size: 30px;
-//   // transform: translate(60%);
-// }
-
 @mixin flexCenter {
   display: flex;
   flex-direction: column;
@@ -38,6 +27,30 @@
 
 }
 
+@mixin heart-animated {
+  & i {
+    color: black;
+    width: 20px;
+    height: 20px;
+    font-size: 2rem;
+    position: absolute;
+    right: 3rem;
+    top: 3%;
+    transform: translate(-50%);
+  }
+  .fas::before {
+    @include gradient(1);
+    color: transparent;
+    background-clip: text;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+  }
+  & .fas:hover::before {
+    opacity: 1;
+    transform: translate(-50%) scale(1.1);
+  }
+}
+
 @mixin fonctioning {
   background-color: $greyClair;
   border-radius: 20px 20px 20px 20px;
@@ -51,6 +64,14 @@
   background: linear-gradient(to right, $primary-color, $secondary-color);
 }
 
+
+@mixin gradient($opacity:0.9) {
+  background-image: linear-gradient(
+    to top,
+    rgba(147,86,220, $opacity),
+    rgba(255,121,218, $opacity),
+  );
+}
 // Mixin pour créer une animation de rotation
 @mixin rotate($degrees) {
   transform: rotate($degrees);

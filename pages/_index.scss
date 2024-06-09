@@ -63,9 +63,11 @@
     position: relative;
     @include fonctioning;
     @include flexAlign;
+    color: grey;
 
     &:hover {
       background: $secondary-color;
+      opacity: 0.5;
     }
     .number {
       @include flexAlign;
@@ -93,8 +95,14 @@
     @include fonctioning;
     @include flexAlign;
     position: relative;
+
     &:hover {
       background: $secondary-color;
+      opacity: 0.3;
+      & i {
+        color: purple;
+      }
+      color: black;
     }
 
     .number {
@@ -114,12 +122,14 @@
     @include fonctioning;
     @include flexAlign;
     position: relative;
+    color: gray;
     .titre-menu {
       position: absolute;
       left: 75px;
     }
     &:hover {
       background: $secondary-color;
+      opacity: 0.5;
     }
     .number {
       @include flexAlign;
@@ -153,7 +163,7 @@
   a {
     background-color: $white;
     width: 90%;
-    // display: block;
+    display: block;
     margin: auto;
     border-radius: 20px;
     text-decoration: none;
@@ -225,15 +235,16 @@
     transform: translate(-50%);
   }
   .fas::before {
+    @include gradient(1);
     color: transparent;
-    background-image: linear-gradient(red, blue);
     background-clip: text;
     opacity: 0;
     transition: all 200ms ease-in-out;
   }
   & .fas:hover::before {
-  opacity: 1;
-    }
+    opacity: 1;
+    transform: translate(-50%) scale(1.1);
+  }
 }
 
 .page-menu {

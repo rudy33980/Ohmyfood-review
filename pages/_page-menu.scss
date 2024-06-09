@@ -4,8 +4,8 @@
 @media screen and (min-width: 375px) {
   main {
     height: auto;
-    background-color: $greyClair;
-    margin-bottom: -30px;
+    // background-color: $greyClair;
+    // margin-bottom: -30px;
   }
   .img-menu {
     & img {
@@ -21,21 +21,27 @@
   .block__meal {
     background-color: $greyClair;
     border-radius: 50px 50px 0 0px;
-    padding: 0 10%;
     transform: translate(0px, -70px);
-    height: 1200px;
+    // height: 1200px;
 
     & .title_meal {
       display: flex;
       align-items: center;
-      height: 100px;
+      height: 50px;
+      padding-top: 30px;
+      @include heart-animated;
     }
     h1 {
+      font-family: "shrikland", "sans-serif";
       padding: 20px;
+      font-size: 2rem;
+      font-style: italic;
     }
+    
   }
 
   .block__entry {
+    padding: 5%;
     & .block__entry-titre {
       position: relative;
     }
