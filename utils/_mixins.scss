@@ -6,17 +6,17 @@
 
 @mixin flexAlign {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
 @mixin flexAlignRight {
   display: flex;
-  justify-content:end;
+  justify-content: end;
   align-items: center;
 }
 @mixin flexAlignLeft {
   display: flex;
-  justify-content:start;
+  justify-content: start;
   align-items: center;
 }
 
@@ -24,7 +24,6 @@
   display: grid;
   grid-template-rows: 3fr;
   justify-content: center;
-
 }
 
 @mixin heart-animated {
@@ -60,16 +59,15 @@
 }
 
 // Mixin pour ajouter un dégradé de couleur en arrière-plan
-@mixin gradient-background{
+@mixin gradient-background {
   background: linear-gradient(to right, $primary-color, $secondary-color);
 }
 
-
-@mixin gradient($opacity:0.9) {
+@mixin gradient($opacity: 0.9) {
   background-image: linear-gradient(
     to top,
-    rgba(147,86,220, $opacity),
-    rgba(255,121,218, $opacity),
+    rgba(147, 86, 220, $opacity),
+    rgba(255, 121, 218, $opacity)
   );
 }
 // Mixin pour créer une animation de rotation
@@ -98,5 +96,8 @@
     transform: scale($scale);
   }
 
-  
 }
+
+  @mixin box-shadow {
+    box-shadow: 2px 1px 8px -3px #000000;
+  }
