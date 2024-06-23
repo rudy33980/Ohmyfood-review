@@ -1,0 +1,17 @@
+button {
+    margin: 30px auto 40px;
+    width: 70%;
+    border-radius: 40px;
+    color: $white;
+    @include gradient-background;
+    height: 60px;
+    border: none;
+    font-size: 18px;
+    @include zoom;
+  }
+  @media (min-width: map-get($breakpoints, desktop)) {
+
+  button {
+    width: 30%;
+  }
+}

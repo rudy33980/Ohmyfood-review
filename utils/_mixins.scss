@@ -1,0 +1,88 @@
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@mixin flexAlign($justify: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin gridCenter {
+  display: grid;
+  grid-template-rows: 3fr;
+  justify-content: center;
+}
+
+@mixin heart-animated {
+  & i {
+    color: black;
+    font-size: 2rem;
+    position: absolute;
+    right: 3rem;
+    top: 3%;
+    transform: translate(-50%);
+  }
+  .fas::before {
+    @include gradient(1);
+    color: transparent;
+    background-clip: text;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+  }
+  & .fas:hover::before {
+    opacity: 1;
+    transform: translate(-50%) scale(1.1);
+  }
+}
+
+@mixin fonctioning {
+  background-color: $greyClair;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  height: 80px;
+}
+
+@mixin gradient-background {
+  background: linear-gradient(to right, $primary-color, $secondary-color);
+}
+
+@mixin gradient($opacity: 0.9) {
+  background-image: linear-gradient(
+    to top,
+    rgba(147, 86, 220, $opacity),
+    rgba(255, 121, 218, $opacity)
+  );
+}
+
+@mixin rotate($degrees) {
+  transform: rotate($degrees);
+}
+
+@mixin pulse($duration: 1s) {
+  animation: pulseAnimation $duration infinite alternate;
+}
+
+@keyframes pulseAnimation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@mixin zoom($scale: 1.1) {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: 2px 1px 8px -3px #000000;
+}
