@@ -1,6 +1,8 @@
 @import "../layout/header";
 @import "../layout/footer";
 @import "../utils/animations";
+@import "../components/buttons";
+@import "../components/loading-spinner";
 
 main {
   background-color: $greyClair;
@@ -11,7 +13,7 @@ main {
     width: 100%;
     display: block;
     margin: auto;
-    background-size: cover; // Correction de background-image à background-size
+    background-size: cover;
     height: 300px;
     position: relative;
   }
@@ -172,16 +174,18 @@ main {
   cursor: pointer;
 }
 
-@media (min-width: 901px) {
+@media (min-width: 1100px) {
+
+  .functioning h2,.section-menu h2 {
+    text-align: center;
+  }
+
   .block__meal {
     .title_meal {
       h1 {
         font-size: 2.5rem;
       }
     }
-  }
-  .section-menu h2 {
-    margin-left: 5em;
   }
 
   main {
