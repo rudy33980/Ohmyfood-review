@@ -171,3 +171,39 @@ main {
   margin-top: 50px;
   cursor: pointer;
 }
+
+@media (min-width: 901px) {
+  .block__meal {
+    .title_meal {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  .section-menu h2 {
+    margin-left: 5em;
+  }
+
+  main {
+    & .img-menu img {
+      height: auto;
+    }
+
+    .block__meal {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 100px 8fr 5fr;
+
+      .title_meal {
+        grid-column: 1/-1;
+        h1 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+  .order {
+    grid-column: 2/-2;
+    width: 30%;
+  }
+}

@@ -1,26 +1,22 @@
-// Header
 header {
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center;
   display: flex;
+  justify-content: center;
   align-items: center;
-
-  img {
-    display: inline-block;
-    text-align: center;
-    margin-left: 5.5em;
-  }
+  height: 100px; // Vous pouvez ajuster cette hauteur selon vos besoins
+  background-color: $white;
+  position: relative;
 
   a {
-    color: rgb(47, 45, 45);
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin-left: 20px;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $greyfonce;
+      text-decoration: none;
+      font-size: 20px;
   }
 
-  & i:hover {
-    @include zoom;
+  img {
+      height: 40px;
   }
 }

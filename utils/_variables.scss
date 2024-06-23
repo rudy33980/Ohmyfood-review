@@ -1,25 +1,25 @@
-/* Colors */
+// Colors
 $primary-color: #9356dc;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $white: #ffffff;
-$shadow : #d5d5d5;
+$shadow: #d5d5d5;
 $greyClair: #edf1f0;
 $greyfonce: #2a292a;
 
-/* Gradient */
-$gradient-loader : linear-gradient(to top, lighten($primary-color, 50%), $secondary-color, 50%);
+// Gradient
+$gradient-loader: linear-gradient(to top, lighten($primary-color, 50%), $secondary-color, 50%);
 
-/* Degree Gradient */
+// Degree Gradient
 $degree: 165deg;
 
-/* Width */
+// Width
 $mainwidth: 90%;
 
-/* Loading spinner animation delay */
+// Loading spinner animation delay
 $icons-delay: 610ms;
 
-/* Responsive */
+// Responsive breakpoints
 $breakpoints: (
     tablet: 768px,
     desktop: 1024px,

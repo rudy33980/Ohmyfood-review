@@ -9,14 +9,14 @@
   position: fixed;
   background-color: white;
   height: 100vh;
-  inset: 0; //  permet de définir un top à 0, un bottom à 0, un left à 0, un right à 0
+  inset: 0;
   z-index: 1;
   opacity: 0.9;
   animation: disappear 200ms $animation-duration * $animation-count forwards;
-  // animation-fill-mode: forwards;
   transform-origin: top;
+
   &::after {
-    content: "Hello";
+    content: "";
     height: 100px;
     width: 100px;
     border-right: 5px solid transparent;
@@ -25,8 +25,7 @@
     position: absolute;
     top: 40%;
     left: 40%;
-    animation: spin $animation-duration ease-in-out;
-    animation-iteration-count: 2;
+    animation: spin $animation-duration ease-in-out $animation-count;
   }
 }
 
@@ -43,6 +42,7 @@
       font-size: 20px;
     }
   }
+
   input {
     background-color: $shadow;
     border: none;
@@ -56,18 +56,19 @@
 .discovery {
   background-color: $greyClair;
   @include flexCenter;
+  text-align: center;
 
   h1 {
     font-size: 1.5rem;
   }
+
   p {
     width: 360px;
     font-size: 1.1rem;
   }
+
   button {
-    margin-top: 30px;
-    margin-bottom: 40px;
-    margin-left: 15%;
+    margin: 30px auto 40px;
     width: 70%;
     border-radius: 40px;
     color: $white;
@@ -82,11 +83,13 @@
   width: 85%;
   margin: 0 auto;
 
-  & h2 {
+  h2 {
     font-size: 30px;
   }
 
-  .choose {
+  .choose,
+  .compose,
+  .taste {
     position: relative;
     @include fonctioning;
     @include flexAlign;
@@ -95,41 +98,11 @@
     &:hover {
       background: $secondary-color;
       opacity: 0.5;
-    }
-    .number {
-      @include flexAlign;
-      color: $white;
-      font-size: 15px;
-      border-radius: 50px;
-      width: 25px;
-      height: 25px;
-      background-color: $primary-color;
-      position: absolute;
-      left: -15px;
-    }
-    .titre-menu {
-      position: absolute;
-      left: 75px;
-    }
-  }
+      color: black;
 
-  i {
-    position: absolute;
-    left: 40px;
-  }
-
-  .compose {
-    @include fonctioning;
-    @include flexAlign;
-    position: relative;
-
-    &:hover {
-      background: $secondary-color;
-      opacity: 0.3;
-      & i {
+      i {
         color: purple;
       }
-      color: black;
     }
 
     .number {
@@ -143,31 +116,15 @@
       position: absolute;
       left: -15px;
     }
-  }
 
-  .taste {
-    @include fonctioning;
-    @include flexAlign;
-    position: relative;
-    color: gray;
     .titre-menu {
       position: absolute;
       left: 75px;
     }
-    &:hover {
-      background: $secondary-color;
-      opacity: 0.5;
-    }
-    .number {
-      @include flexAlign;
-      color: $white;
-      font-size: 15px;
-      border-radius: 50px;
-      width: 25px;
-      height: 25px;
-      background-color: $primary-color;
+
+    i {
       position: absolute;
-      left: -15px;
+      left: 40px;
     }
   }
 
@@ -196,42 +153,23 @@
     text-decoration: none;
     margin-bottom: 5%;
     position: relative;
-  }
-
-  .other-card {
-    border-radius: 20px;
-    text-decoration: none;
-    margin: auto;
-    margin-bottom: 5%;
-    background-color: $white;
-    width: 90%;
-    display: block;
-  }
-
-  img {
-    border-radius: 20px 20px 0 0px;
+    
+    img {
+    border-radius: 20px 20px 0 0;
     width: 100%;
-    display: block;
-    margin: auto;
     object-fit: cover;
     height: 200px;
-    position: relative;
   }
+
   .new-menu {
     width: 100px;
     height: 40px;
     color: green;
     background-color: $tertiary-color;
     position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 20px;
-    margin-right: 20px;
+    top: 20px;
+    right: 20px;
     @include flexAlign;
-  }
-
-  h2 {
-    padding-top: 30px;
   }
 
   p,
@@ -241,36 +179,36 @@
     font-size: 16px;
   }
 
-  span {
-    color: black;
-  }
-
   .text-card {
     margin-left: 20px;
     line-height: 0.5;
     padding-bottom: 20px;
     position: relative;
+    span {
+color: black;    }
   }
-  & i {
+  }
+
+  i {
     color: black;
-    width: 20px;
-    height: 20px;
     font-size: 2rem;
     position: absolute;
     right: 1rem;
     top: 5%;
     transform: translate(-50%);
-  }
-  .fas::before {
-    @include gradient(1);
-    color: transparent;
-    background-clip: text;
-    opacity: 0;
-    transition: all 200ms ease-in-out;
-  }
-  & .fas:hover::before {
-    opacity: 1;
-    transform: translate(-50%) scale(1.1);
+
+    &.fas::before {
+      @include gradient(1);
+      color: transparent;
+      background-clip: text;
+      opacity: 0;
+      transition: all 200ms ease-in-out;
+    }
+
+    &.fas:hover::before {
+      opacity: 1;
+      transform: translate(-50%) scale(1.1);
+    }
   }
 }
 
@@ -301,34 +239,41 @@
     }
   }
 }
-// @media (min-width: 600px) and (max-width: 767px) {
-//   /* Styles pour les petites tablettes en mode portrait */
-//   .new-menu {
-//     color: green;
-//     background-color: $tertiary-color;
-//     max-width: 70px;
-//     max-height: 20px;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     margin-top: 20px;
-//     margin-right: 20px;
-//     padding: 2%;
-//   }
-// }
-// @media (min-width: 769px) and (max-width: 1199px) {
-//   /* Styles pour les petits écrans de desktop */
-//   .new-menu {
-//     color: green;
-//     display: inline-block;
-//     background-color: $tertiary-color;
-//     max-width: 40px;
-//     max-height: 10px;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     margin-top: 20px;
-//     margin-right: 20px;
-//     padding: 2%;
-//   }
+@media (min-width: map-get($breakpoints, desktop)) {
+  .discovery {
+    h1 {
+      font-size: 2.5rem;
+    }
 
+    p {
+      width: 600px;
+      font-size: 1.5rem;
+    }
+
+    button {
+      width: 30%;
+    }
+  }
+
+  .functioning {
+    width: 60%;
+
+    .choose,
+    .compose,
+    .taste {
+      .titre-menu {
+        left: 120px;
+      }
+
+      i {
+        left: 80px;
+      }
+    }
+  }
+
+  .section-menu {
+    .card-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
