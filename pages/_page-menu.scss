@@ -2,16 +2,16 @@
 @import "../layout/footer";
 @import "../utils/animations";
 
-// @media screen and (min-width: 375px) {
 main {
   background-color: $greyClair;
 }
+
 .img-menu {
-  & img {
+  img {
     width: 100%;
     display: block;
     margin: auto;
-    background-image: cover;
+    background-size: cover; // Correction de background-image à background-size
     height: 300px;
     position: relative;
   }
@@ -19,237 +19,59 @@ main {
 
 .block__meal {
   background-color: $greyClair;
-  border-radius: 50px 50px 0 0px;
-  transform: translate(0px, -70px);
+  border-radius: 50px 50px 0 0;
+  transform: translateY(-70px);
 
-  & .title_meal {
+  .title_meal {
     display: flex;
     align-items: center;
     height: 50px;
     padding-top: 30px;
     @include heart-animated;
-  }
 
-  h1 {
-    font-family: "Shrikhand", "sans-serif";
-    padding: 20px;
-    font-size: 2rem;
-    font-style: italic;
+    h1 {
+      font-family: "Shrikhand", "sans-serif";
+      padding: 20px;
+      font-size: 2rem;
+      font-style: italic;
+    }
   }
 }
 
-.block__entry {
+.block__entry,
+.block__flat,
+.block__dessert {
   padding: 5%;
-  & .block__entry-titre {
+
+  .block__entry-titre,
+  .block__flat-titre,
+  .block__dessert-titre {
     position: relative;
     text-transform: uppercase;
-  }
-  & .block__entry-titre::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 50px;
-    height: 5px;
-    background-color: aquamarine;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 5px;
+      background-color: aquamarine;
+    }
   }
 
-  & .block__entry__entry-1,
+  .block__entry__entry-1,
   .block__entry__entry-2,
   .block__entry__entry-3,
-  .block__entry__entry-4 {
-    @for $i from 1 through 4 {
-      &:nth-child(#{$i}) {
-        animation-delay: 100ms * $i;
-      }
-    }
-    display: flex;
-    animation: appear 1s;
-    animation-fill-mode: both;
-    background-color: #fff;
-    border-radius: 0.75rem;
-    margin: 1rem 0;
-    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
-    max-width: 100%;
-    overflow: hidden;
-    @include box-shadow;
-    cursor: pointer;
-  }
-
-  .text-ellipsis {
-    padding: 15px 0 0 10px;
-    margin: 0;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  .entry-1-1,
-  .entry-1-2,
-  .entry-1-3,
-  .entry-1-4 {
-    overflow: hidden;
-    width: 300px;
-    flex-grow: 1;
-  }
-
-  .price {
-    font-weight: bold;
-    margin: 50px 20px 0px 30px;
-  }
-  .bloc__entry__check {
-    display: grid;
-    place-items: center;
-    $input-width: 4rem;
-    background-color: #99e2d0;
-    border-radius: 0 10px 10px 0;
-    margin-right: -4.5rem;
-    width: $input-width;
-    height: 80px;
-    transition: margin-right 0.5s;
-    min-width: 4rem;
-
-    i {
-      background-color: $white;
-      border-radius: 50%;
-      aspect-ratio: 1;
-      width: 2em;
-      color: #99e2d0;
-      display: grid;
-      place-items: center;
-    }
-  }
-
-  .block__entry__entry-1:hover .bloc__entry__check,
-  .block__entry__entry-2:hover .bloc__entry__check,
-  .block__entry__entry-3:hover .bloc__entry__check,
-  .block__entry__entry-4:hover .bloc__entry__check {
-    margin-right: 0;
-  }
-
-  .block__entry__entry-1:hover i,
-  .block__entry__entry-2:hover i,
-  .block__entry__entry-3:hover i,
-  .block__entry__entry-4:hover i {
-    animation: rotation 0.5s ease-in-out;
-  }
-}
-
-.block__flat {
-  // padding: 5%;
-
-  & .block__flat-titre {
-    position: relative;
-  }
-  .block__flat-titre::after {
-    content: "";
-    position: absolute;
-    top: 30px;
-    left: 0;
-    width: 50px;
-    height: 5px;
-    background-color: aquamarine;
-  }
-
-  & .block__flat__flat-1,
+  .block__entry__entry-4,
+  .block__flat__flat-1,
   .block__flat__flat-2,
-  .block__flat__flat-3 {
-    @for $i from 1 through 4 {
-      &:nth-child(#{$i}) {
-        animation-delay: 100ms * $i;
-      }
-    }
-    display: flex;
-    animation: appear 1s;
-    animation-fill-mode: both;
-    background-color: #fff;
-    border-radius: 0.75rem;
-    margin: 1rem 0;
-    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
-    max-width: 100%;
-    overflow: hidden;
-    @include box-shadow;
-    cursor: pointer;
-  }
-  .text-ellipsis {
-    padding: 15px 0 0 10px;
-    margin: 0;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  .flat-1-1,
-  .flat-1-2,
-  .flat-1-3 {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    flex-grow: 1;
-  }
-  .price {
-    font-weight: bold;
-    margin: 50px 20px 0px 30px;
-  }
-  .bloc__flat__check,
-  .bloc__flat__check {
-    display: grid;
-    place-items: center;
-    $input-width: 4rem;
-    background-color: #99e2d0;
-    border-radius: 0 10px 10px 0;
-    margin-right: -4.5rem;
-    width: $input-width;
-    height: 80px;
-    transition: margin-right 0.5s;
-    min-width: 4rem;
-
-    i {
-      background-color: $white;
-      border-radius: 50%;
-      aspect-ratio: 1;
-      width: 2em;
-      color: #99e2d0;
-      display: grid;
-      place-items: center;
-    }
-  }
-
-  .block__flat__flat-1:hover .bloc__flat__check,
-  .block__flat__flat-2:hover .bloc__flat__check,
-  .block__flat__flat-3:hover .bloc__flat__check,
-  .block__flat__flat-4:hover .bloc__flat__check {
-    margin-right: 0;
-  }
-
-  .block__flat__flat-1:hover i,
-  .block__flat__flat-2:hover i,
-  .block__flat__flat-3:hover i,
-  .block__flat__flat-4:hover i {
-    animation: rotation 0.5s ease-in-out;
-  }
-}
-
-.block__dessert {
-  // padding: 5%;
-
-  & .block__dessert-titre {
-    position: relative;
-    text-transform: uppercase;
-  }
-  .block__dessert-titre::after {
-    content: "";
-    position: absolute;
-    top: 30px;
-    left: 0;
-    width: 50px;
-    height: 5px;
-    background-color: aquamarine;
-  }
-
-  & .block__dessert__dessert-1,
+  .block__flat__flat-3,
+  .block__flat__flat-4,
+  .block__dessert__dessert-1,
   .block__dessert__dessert-2,
-  .block__dessert__dessert-3 {
+  .block__dessert__dessert-3,
+  .block__dessert__dessert-4 {
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
         animation-delay: 100ms * $i;
@@ -266,66 +88,74 @@ main {
     overflow: hidden;
     @include box-shadow;
     cursor: pointer;
-  }
-  .text-ellipsis {
-    padding: 15px 0 0 10px;
-    margin: 0;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
 
-  .dessert-1-1,
-  .dessert-1-2,
-  .dessert-1-3 {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    flex-grow: 1;
-  }
-  .price {
-    font-weight: bold;
-    margin: 50px 20px 0px 30px;
-  }
-  .bloc__dessert__check,
-  .bloc__dessert__check {
-    display: grid;
-    place-items: center;
-    $input-width: 4rem;
-    background-color: #99e2d0;
-    border-radius: 0 10px 10px 0;
-    margin-right: -4.5rem;
-    width: $input-width;
-    height: 80px;
-    transition: margin-right 0.5s;
-    min-width: 4rem;
+    .text-ellipsis {
+      padding: 15px 0 0 10px;
+      margin: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
 
-    i {
-      background-color: $white;
-      border-radius: 50%;
-      aspect-ratio: 1;
-      width: 2em;
-      color: #99e2d0;
+    .entry-1-1,
+    .entry-1-2,
+    .entry-1-3,
+    .entry-1-4,
+    .flat-1-1,
+    .flat-1-2,
+    .flat-1-3,
+    .flat-1-4,
+    .dessert-1-1,
+    .dessert-1-2,
+    .dessert-1-3,
+    .dessert-1-4 {
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .price {
+      font-weight: bold;
+      margin: 50px 20px 0px 30px;
+    }
+
+    .bloc__entry__check,
+    .bloc__flat__check,
+    .bloc__dessert__check {
       display: grid;
       place-items: center;
+      $input-width: 4rem;
+      background-color: #99e2d0;
+      border-radius: 0 10px 10px 0;
+      margin-right: -4.5rem;
+      width: $input-width;
+      height: 80px;
+      transition: margin-right 0.5s;
+      min-width: 4rem;
+
+      i {
+        background-color: $white;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        width: 2em;
+        color: #99e2d0;
+        display: grid;
+        place-items: center;
+      }
+    }
+
+    &:hover {
+      .bloc__entry__check,
+      .bloc__flat__check,
+      .bloc__dessert__check {
+        margin-right: 0;
+      }
+
+      i {
+        animation: rotation 0.5s ease-in-out;
+      }
     }
   }
-
-  .block__dessert__dessert-1:hover .bloc__dessert__check,
-  .block__dessert__dessert-2:hover .bloc__dessert__check,
-  .block__dessert__dessert-3:hover .bloc__dessert__check,
-  .block__dessert__dessert-4:hover .bloc__dessert__check {
-    margin-right: 0;
-  }
-
-  .block__dessert__dessert-1:hover i,
-  .block__dessert__dessert-2:hover i,
-  .block__dessert__dessert-3:hover i,
-  .block__dessert__dessert-4:hover i {
-    animation: rotation 0.5s ease-in-out;
-  }
 }
-
 
 .order {
   @include gradient-background;
