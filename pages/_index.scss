@@ -3,6 +3,33 @@
 @import "../utils/mixins";
 @import "../utils/animations";
 
+.loader {
+  $animation-duration: 1s;
+  $animation-count: 2;
+  position: fixed;
+  background-color: white;
+  height: 100vh;
+  inset: 0; //  permet de définir un top à 0, un bottom à 0, un left à 0, un right à 0
+  z-index: 1;
+  opacity: 0.9;
+  animation: disappear 200ms $animation-duration * $animation-count forwards;
+  // animation-fill-mode: forwards;
+  transform-origin: top;
+  &::after {
+    content: "Hello";
+    height: 100px;
+    width: 100px;
+    border-right: 5px solid transparent;
+    border-top: 5px solid blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    animation: spin $animation-duration ease-in-out;
+    animation-iteration-count: 2;
+  }
+}
+
 .search-destination {
   background-color: $shadow;
   height: 50px;
@@ -190,17 +217,17 @@
     height: 200px;
     position: relative;
   }
-
   .new-menu {
+    width: 100px;
+    height: 40px;
     color: green;
     background-color: $tertiary-color;
-    font-size: 1.1em;
     position: absolute;
     top: 0;
     right: 0;
     margin-top: 20px;
     margin-right: 20px;
-    padding: 2%;
+    @include flexAlign;
   }
 
   h2 {
@@ -274,3 +301,34 @@
     }
   }
 }
+// @media (min-width: 600px) and (max-width: 767px) {
+//   /* Styles pour les petites tablettes en mode portrait */
+//   .new-menu {
+//     color: green;
+//     background-color: $tertiary-color;
+//     max-width: 70px;
+//     max-height: 20px;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     margin-top: 20px;
+//     margin-right: 20px;
+//     padding: 2%;
+//   }
+// }
+// @media (min-width: 769px) and (max-width: 1199px) {
+//   /* Styles pour les petits écrans de desktop */
+//   .new-menu {
+//     color: green;
+//     display: inline-block;
+//     background-color: $tertiary-color;
+//     max-width: 40px;
+//     max-height: 10px;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     margin-top: 20px;
+//     margin-right: 20px;
+//     padding: 2%;
+//   }
+

@@ -4,7 +4,7 @@
 
 // @media screen and (min-width: 375px) {
 main {
-  height: auto;
+  background-color: $greyClair;
 }
 .img-menu {
   & img {
@@ -21,7 +21,6 @@ main {
   background-color: $greyClair;
   border-radius: 50px 50px 0 0px;
   transform: translate(0px, -70px);
-  // height: 1200px;
 
   & .title_meal {
     display: flex;
@@ -43,6 +42,7 @@ main {
   padding: 5%;
   & .block__entry-titre {
     position: relative;
+    text-transform: uppercase;
   }
   & .block__entry-titre::after {
     content: "";
@@ -58,14 +58,22 @@ main {
   .block__entry__entry-2,
   .block__entry__entry-3,
   .block__entry__entry-4 {
-    background-color: #fff;
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: 100ms * $i;
+      }
+    }
     display: flex;
+    animation: appear 1s;
+    animation-fill-mode: both;
+    background-color: #fff;
     border-radius: 0.75rem;
     margin: 1rem 0;
     box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
     max-width: 100%;
     overflow: hidden;
     @include box-shadow;
+    cursor: pointer;
   }
 
   .text-ellipsis {
@@ -89,7 +97,7 @@ main {
     font-weight: bold;
     margin: 50px 20px 0px 30px;
   }
-  .bloc__entry__check,.bloc__flat__check {
+  .bloc__entry__check {
     display: grid;
     place-items: center;
     $input-width: 4rem;
@@ -128,7 +136,7 @@ main {
 }
 
 .block__flat {
-  margin-top: 50px;
+  // padding: 5%;
 
   & .block__flat-titre {
     position: relative;
@@ -146,17 +154,29 @@ main {
   & .block__flat__flat-1,
   .block__flat__flat-2,
   .block__flat__flat-3 {
-    background-color: #fff;
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: 100ms * $i;
+      }
+    }
     display: flex;
+    animation: appear 1s;
+    animation-fill-mode: both;
+    background-color: #fff;
     border-radius: 0.75rem;
     margin: 1rem 0;
     box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
     max-width: 100%;
     overflow: hidden;
     @include box-shadow;
+    cursor: pointer;
   }
   .text-ellipsis {
-    margin-left: 10px;
+    padding: 15px 0 0 10px;
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   .flat-1-1,
@@ -171,7 +191,8 @@ main {
     font-weight: bold;
     margin: 50px 20px 0px 30px;
   }
-  .bloc__flat__check,.bloc__flat__check {
+  .bloc__flat__check,
+  .bloc__flat__check {
     display: grid;
     place-items: center;
     $input-width: 4rem;
@@ -209,14 +230,14 @@ main {
   }
 }
 
+.block__dessert {
+  // padding: 5%;
 
-.block__flat {
-  margin-top: 50px;
-
-  & .block__flat-titre {
+  & .block__dessert-titre {
     position: relative;
+    text-transform: uppercase;
   }
-  .block__flat-titre::after {
+  .block__dessert-titre::after {
     content: "";
     position: absolute;
     top: 30px;
@@ -229,17 +250,29 @@ main {
   & .block__dessert__dessert-1,
   .block__dessert__dessert-2,
   .block__dessert__dessert-3 {
-    background-color: #fff;
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: 100ms * $i;
+      }
+    }
     display: flex;
+    animation: appear 1s;
+    animation-fill-mode: both;
+    background-color: #fff;
     border-radius: 0.75rem;
     margin: 1rem 0;
     box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
     max-width: 100%;
     overflow: hidden;
     @include box-shadow;
+    cursor: pointer;
   }
   .text-ellipsis {
-    margin-left: 10px;
+    padding: 15px 0 0 10px;
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   .dessert-1-1,
@@ -254,7 +287,8 @@ main {
     font-weight: bold;
     margin: 50px 20px 0px 30px;
   }
-  .bloc__dessert__check,.bloc__dessert__check {
+  .bloc__dessert__check,
+  .bloc__dessert__check {
     display: grid;
     place-items: center;
     $input-width: 4rem;
@@ -293,74 +327,17 @@ main {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.block__dessert {
-  & .block__dessert-titre {
-    position: relative;
-  }
-  .block__dessert-titre::after {
-    content: "";
-    position: absolute;
-    top: 30px;
-    left: 0;
-    width: 50px;
-    height: 5px;
-    background-color: aquamarine;
-  }
-
-  & .block__dessert__dessert-1,
-  .block__dessert__dessert-2,
-  .block__dessert__dessert-3 {
-    background-color: #fff;
-    display: flex;
-    border-radius: 0.75rem;
-    margin: 1rem 0;
-    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
-    max-width: 100%;
-    overflow: hidden;
-    @include box-shadow;
-  }
-  .text-ellipsis {
-    margin-left: 10px;
-  }
-
-  .dessert-1-1,
-  .dessert-1-2,
-  .dessert-1-3 {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    width: 300px;
-    flex-grow: 1;
-  }
-}
-
 .order {
   @include gradient-background;
+  @include zoom;
   border-radius: 50px;
   width: 150px;
   height: 50px;
   color: $white;
   border: none;
   display: block;
-  margin: 30px auto;
+  margin: 0 auto;
   font-size: 20px;
+  margin-top: 50px;
+  cursor: pointer;
 }

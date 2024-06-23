@@ -1,59 +1,59 @@
-// _buttons.scss
+// // _buttons.scss
 
-// Définition des couleurs de bouton
-$primary-button-color: #007bff; // Couleur principale
-$secondary-button-color: #6c757d; // Couleur secondaire
-$success-button-color: #28a745; // Couleur de succès
-$danger-button-color: #dc3545; // Couleur de danger
-$warning-button-color: #ffc107; // Couleur d'avertissement
+// // Définition des couleurs de bouton
+// $primary-button-color: #007bff; // Couleur principale
+// $secondary-button-color: #6c757d; // Couleur secondaire
+// $success-button-color: #28a745; // Couleur de succès
+// $danger-button-color: #dc3545; // Couleur de danger
+// $warning-button-color: #ffc107; // Couleur d'avertissement
 
-// Définition des tailles de bouton
-$small-button-padding: 5px 10px;
-$medium-button-padding: 10px 15px;
-$large-button-padding: 15px 20px;
+// // Définition des tailles de bouton
+// $small-button-padding: 5px 10px;
+// $medium-button-padding: 10px 15px;
+// $large-button-padding: 15px 20px;
 
-// Styles de bouton
-.button {
-  display: inline-block;
-  padding: $medium-button-padding;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+// // Styles de bouton
+// .button {
+//   display: inline-block;
+//   padding: $medium-button-padding;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   font-size: 16px;
+//   text-align: center;
+//   text-decoration: none;
+//   transition: background-color 0.3s ease;
 
-  &.primary {
-    background-color: $primary-button-color;
-    color: white;
-  }
+//   &.primary {
+//     background-color: $primary-button-color;
+//     color: white;
+//   }
 
-  &.secondary {
-    background-color: $secondary-button-color;
-    color: white;
-  }
+//   &.secondary {
+//     background-color: $secondary-button-color;
+//     color: white;
+//   }
 
-  &.success {
-    background-color: $success-button-color;
-    color: white;
-  }
+//   &.success {
+//     background-color: $success-button-color;
+//     color: white;
+//   }
 
-  &.danger {
-    background-color: $danger-button-color;
-    color: white;
-  }
+//   &.danger {
+//     background-color: $danger-button-color;
+//     color: white;
+//   }
 
-  &.warning {
-    background-color: $warning-button-color;
-    color: white;
-  }
+//   &.warning {
+//     background-color: $warning-button-color;
+//     color: white;
+//   }
 
-  &:hover {
-    opacity: 0.8;
-  }
+//   &:hover {
+//     opacity: 0.8;
+//   }
 
-  &:focus {
-    outline: none;
-  }
-}
+//   &:focus {
+//     outline: none;
+//   }
+// }
