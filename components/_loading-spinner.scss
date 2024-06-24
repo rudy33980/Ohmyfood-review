@@ -9,18 +9,18 @@
     opacity: 0.9;
     animation: disappear 200ms $animation-duration * $animation-count forwards;
     transform-origin: top;
+    margin: auto;
   
     &::after {
       content: "";
       height: 100px;
       width: 100px;
       border-right: 5px solid transparent;
-      @include gradient-background;
-      border: 1px solid $primary-color;
+      // @include gradient-background;
+      // border: 1px solid $tertiary-color;
       border-radius: 50%;
       position: absolute;
       top: 40%;
-      left: 40%;
       animation: spin $animation-duration ease-in-out $animation-count;
     }
   }

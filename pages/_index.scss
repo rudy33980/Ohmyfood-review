@@ -59,7 +59,7 @@
     color: grey;
 
     &:hover {
-      background: $secondary-color;
+      background: lighten( purple, 35%);
       opacity: 0.5;
       color: black;
 
@@ -179,7 +179,7 @@
 .page-menu {
   background-color: $tertiary-color;
   color: $tertiary-color;
-  font-family: $tertiary-color;
+  // font-family: $tertiary-color;
 
   .menu-header {
     padding: 20px;
