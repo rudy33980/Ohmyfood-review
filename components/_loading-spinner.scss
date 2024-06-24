@@ -1,0 +1,26 @@
+.loader {
+    $animation-duration: 1s;
+    $animation-count: 2;
+    position: fixed;
+    background-color: white;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.9;
+    animation: disappear 200ms $animation-duration * $animation-count forwards;
+    transform-origin: top;
+  
+    &::after {
+      content: "";
+      height: 100px;
+      width: 100px;
+      border-right: 5px solid transparent;
+      @include gradient-background;
+      border: 1px solid $primary-color;
+      border-radius: 50%;
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      animation: spin $animation-duration ease-in-out $animation-count;
+    }
+  }

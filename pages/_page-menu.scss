@@ -1,0 +1,213 @@
+@import "../layout/header";
+@import "../layout/footer";
+@import "../utils/animations";
+@import "../components/buttons";
+@import "../components/loading-spinner";
+
+main {
+  background-color: $greyClair;
+}
+
+.img-menu {
+  img {
+    width: 100%;
+    display: block;
+    margin: auto;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+  }
+}
+
+.block__meal {
+  background-color: $greyClair;
+  border-radius: 50px 50px 0 0;
+  transform: translateY(-70px);
+
+  .title_meal {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-top: 30px;
+    @include heart-animated;
+
+    h1 {
+      font-family: "Shrikhand", "sans-serif";
+      padding: 20px;
+      font-size: 2rem;
+      font-style: italic;
+    }
+  }
+}
+
+.block__entry,
+.block__flat,
+.block__dessert {
+  padding: 5%;
+
+  .block__entry-titre,
+  .block__flat-titre,
+  .block__dessert-titre {
+    position: relative;
+    text-transform: uppercase;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 5px;
+      background-color: aquamarine;
+    }
+  }
+
+  .block__entry__entry-1,
+  .block__entry__entry-2,
+  .block__entry__entry-3,
+  .block__entry__entry-4,
+  .block__flat__flat-1,
+  .block__flat__flat-2,
+  .block__flat__flat-3,
+  .block__flat__flat-4,
+  .block__dessert__dessert-1,
+  .block__dessert__dessert-2,
+  .block__dessert__dessert-3,
+  .block__dessert__dessert-4 {
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: 100ms * $i;
+      }
+    }
+    display: flex;
+    animation: appear 1s;
+    animation-fill-mode: both;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    margin: 1rem 0;
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow: hidden;
+    @include box-shadow;
+    cursor: pointer;
+
+    .text-ellipsis {
+      padding: 15px 0 0 10px;
+      margin: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .entry-1-1,
+    .entry-1-2,
+    .entry-1-3,
+    .entry-1-4,
+    .flat-1-1,
+    .flat-1-2,
+    .flat-1-3,
+    .flat-1-4,
+    .dessert-1-1,
+    .dessert-1-2,
+    .dessert-1-3,
+    .dessert-1-4 {
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .price {
+      font-weight: bold;
+      margin: 50px 20px 0px 30px;
+    }
+
+    .bloc__entry__check,
+    .bloc__flat__check,
+    .bloc__dessert__check {
+      display: grid;
+      place-items: center;
+      $input-width: 4rem;
+      background-color: #99e2d0;
+      border-radius: 0 10px 10px 0;
+      margin-right: -4.5rem;
+      width: $input-width;
+      height: 80px;
+      transition: margin-right 0.5s;
+      min-width: 4rem;
+
+      i {
+        background-color: $white;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        width: 2em;
+        color: #99e2d0;
+        display: grid;
+        place-items: center;
+      }
+    }
+
+    &:hover {
+      .bloc__entry__check,
+      .bloc__flat__check,
+      .bloc__dessert__check {
+        margin-right: 0;
+      }
+
+      i {
+        animation: rotation 0.5s ease-in-out;
+      }
+    }
+  }
+}
+
+.order {
+  @include gradient-background;
+  @include zoom;
+  border-radius: 50px;
+  width: 150px;
+  height: 50px;
+  color: $white;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+@media (min-width: 1100px) {
+
+  .functioning h2,.section-menu h2 {
+    text-align: center;
+  }
+
+  .block__meal {
+    .title_meal {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  main {
+    & .img-menu img {
+      height: auto;
+    }
+
+    .block__meal {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 100px 8fr 5fr;
+
+      .title_meal {
+        grid-column: 1/-1;
+        h1 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+  .order {
+    grid-column: 2/-2;
+    width: 30%;
+  }
+}

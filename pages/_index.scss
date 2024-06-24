@@ -1,0 +1,241 @@
+// Importations nécessaires
+@import "../utils/variables";
+@import "../utils/mixins";
+@import "../utils/animations";
+
+.search-destination {
+  background-color: $shadow;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    i {
+      margin-right: 5px;
+      font-size: 20px;
+    }
+  }
+
+  input {
+    background-color: $shadow;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    width: 200px;
+  }
+}
+
+.discovery {
+  background-color: $greyClair;
+  @include flexCenter;
+  text-align: center;
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    width: 360px;
+    font-size: 1.1rem;
+  }
+}
+
+.functioning {
+  width: 85%;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .choose,
+  .compose,
+  .taste {
+    position: relative;
+    @include fonctioning;
+    @include flexAlign;
+    color: grey;
+
+    &:hover {
+      background: $secondary-color;
+      opacity: 0.5;
+      color: black;
+
+      i {
+        color: purple;
+      }
+    }
+
+    .number {
+      @include flexAlign;
+      color: $white;
+      font-size: 15px;
+      border-radius: 50px;
+      width: 25px;
+      height: 25px;
+      background-color: $primary-color;
+      position: absolute;
+      left: -15px;
+    }
+
+    .titre-menu {
+      position: absolute;
+      left: 75px;
+    }
+
+    i {
+      position: absolute;
+      left: 40px;
+    }
+  }
+
+  p {
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
+.section-menu {
+  background-color: $greyClair;
+  padding-bottom: 50px;
+
+  h2 {
+    margin-left: 25px;
+    font-size: 30px;
+  }
+
+  .card,
+  a {
+    background-color: $white;
+    width: 90%;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-bottom: 5%;
+    position: relative;
+
+    img {
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .new-menu {
+      width: 100px;
+      height: 40px;
+      color: green;
+      background-color: $tertiary-color;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      @include flexAlign;
+    }
+
+    p,
+    h3 {
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .text-card {
+      margin-left: 20px;
+      line-height: 0.5;
+      padding-bottom: 20px;
+      position: relative;
+      span {
+        color: black;
+      }
+    }
+  }
+
+  i {
+    color: black;
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+    top: 5%;
+    transform: translate(-50%);
+
+    &.fas::before {
+      @include gradient(1);
+      color: transparent;
+      background-clip: text;
+      opacity: 0;
+      transition: all 200ms ease-in-out;
+    }
+
+    &.fas:hover::before {
+      opacity: 1;
+      transform: translate(-50%) scale(1.1);
+    }
+  }
+}
+
+.page-menu {
+  background-color: $tertiary-color;
+  color: $tertiary-color;
+  font-family: $tertiary-color;
+
+  .menu-header {
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .menu-list {
+    padding: 20px;
+
+    .menu-item {
+      margin-bottom: 10px;
+      border: 1px solid $tertiary-color;
+      padding: 10px;
+
+      &:hover {
+        background-color: $tertiary-color;
+        color: $tertiary-color;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    }
+  }
+}
+@media (min-width: map-get($breakpoints, desktop)) {
+  .discovery {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      width: 600px;
+      font-size: 1.5rem;
+    }
+
+   
+  }
+
+  .functioning {
+    width: 60%;
+
+    .choose,
+    .compose,
+    .taste {
+      .titre-menu {
+        left: 120px;
+      }
+
+      i {
+        left: 80px;
+      }
+    }
+  }
+
+  .section-menu {
+    .card-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
